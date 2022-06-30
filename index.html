@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <title>Backdrop-filter</title>
+  <style>
+    /* 最小尺寸 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      background: url('./img/pexels-tobi-463731.jpg') fixed center top;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .container-fluid {
+      height: 170vh;
+    }
+
+    .row {
+      display: block;
+    }
+
+    .br-1 {
+      border-radius: 30px 30px 0 0;
+    }
+
+
+    /* 各種濾鏡 */
+    .grayscale {
+      backdrop-filter: grayscale(1);
+    }
+
+    .brightness {
+      backdrop-filter: brightness(1.5);
+    }
+
+    .blur {
+      backdrop-filter: blur(5px); 
+    }
+
+    .contrast {
+      backdrop-filter: contrast(0.8);
+    }
+
+    .invert {
+      backdrop-filter: invert(0.7);
+    }
+
+    .opacity {
+      backdrop-filter: opacity(0.4);
+    }
+
+    .sepia {
+      backdrop-filter: sepia(0.4);
+    }
+
+    .saturate {
+      backdrop-filter: saturate(1.8);
+    }
+
+    .hue-rotate {
+      backdrop-filter: hue-rotate(120deg);
+      border-radius: 0 0 30px 30px;
+    }
+
+
+    /* 斷點 992 px，大尺寸
+     --------------------------------------------------------------------------- */
+    @media (min-width:992px) {
+
+      * {
+        height: 100%;
+      }
+
+      body {
+        height: 80vh;
+      }
+
+      .container-fluid {
+        width: 180%;
+        height: 80%;
+        display: inline-flex;
+        flex-wrap: nowrap;
+
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+      }
+
+      .row {
+        width: 200%;
+        height: 75%;
+        display: inline-flex;
+        flex-wrap: nowrap;
+      }
+
+      .col {
+        height: 120%;
+        width: 500px;
+      }
+
+      .fs-6 {
+        text-align: center;
+      }
+
+      .br-1 {
+        border-radius: 30px 0 0 30px;
+      }
+
+      .hue-rotate {
+        border-radius: 0 30px 30px 0; 
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid ">
+    <div class="row p-5 m-5 flex-lg-nowrap h-75 text-nowrap text-white ">
+      <div class="col d-flex fs-2 col-lg col-12 justify-content-center align-items-center p-5 border br-1">SCROLL</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border ">backdrop-filter: <br>none</div>  
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border grayscale">backdrop-filter: grayscale(1)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border brightness">backdrop-filter: brightness(1.5)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border blur">backdrop-filter: blur(5px)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border contrast">backdrop-filter: contrast(0.8)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border invert">backdrop-filter: invert(0.7)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border opacity">backdrop-filter: opacity(0.4)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border sepia">backdrop-filter: sepia(0.4)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border saturate">backdrop-filter: saturate(1.8)</div> 
+      <div class="col d-flex fs-6 col-lg col-12 justify-content-center align-items-center p-5 border hue-rotate">backdrop-filter: hue-rotate(120deg)</div> 
+    </div>
+  </div>
+
+
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
